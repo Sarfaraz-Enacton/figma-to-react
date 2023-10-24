@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-primary;
+}
+p {
+  @apply font-secondary;
+}
+.active {
+  @apply text-secondary;
+}
+.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #ff3b33 50%, #162466 50%);
+  border-radius: 2px;
+}
+.hero-bg {
+  /* @apply bg-section-gradient; */
+  background: url("/images/hero-bg.png") no-repeat,
+    linear-gradient(to bottom right, #e9f7ff, #ffdbd4);
+  background-repeat: no-repeat;
+  background-position: right top, center;
+  background-size: 93% auto, auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-bg {
+    background-image: none;
+    background: linear-gradient(to bottom right, #e9f7ff, #ffdbd4);
+  }
+}
